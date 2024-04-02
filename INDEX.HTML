@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+        }
+        .container{
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: rgb(83, 25, 94);
+
+        }
+        .container .card .card-left {
+            background-color: rgb(56,35,71);
+            color: #fff;
+            padding: 20px;
+            line-height: 2;
+            text-align: center;
+            font-size: 1.5rem;
+
+        }
+        .card .card-left img{
+            width: 80px;
+            border-radius: 100px;
+
+        }
+        .card{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 30px;
+
+        }
+        input:focus{
+            box-shadow: 0px 0px 7px #554ff4;
+            border: 1px solid #rebeccapurple;
+
+        }
+        select{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border: 1px solid #ccc;
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+        button{
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            border: none;
+            background-color: blue;
+            color: #fff;
+        }
+        button:hover{
+            border: 1px solid #090925;
+            box-shadow: 0px 0px 10px #ccc;
+            background-color: rgb(92, 145, 215);
+            color: #000;
+        }
+        .name{
+            display: flex;
+            gap: 20px;
+
+        }
+        .card-right{
+            padding: 20px;
+            line-height: 2;
+            background-color: #ffffffff;
+        }
+        @media(max-width:768px){
+            .card{
+                grid-template-columns: repeat(1,1fr);
+            }
+            .container{
+                padding: 5px;
+            }
+        }
+
+        @media(max-width:576px){
+           .name{
+            flex-direction: column;
+           }
+            
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-left">
+            <h1 class="heading">Analytics 101</h1>
+            <p class="subheading">This free shows you how to track <br> imppotant matrices in your browsers</p>
+            <h4>Your host</h4>
+            <img src="https://cdn.pixabay.com/photo/2022/09/08/15/16/cute-7441224_640.jpg" alt="">
+            <P>CEO,Company</P>
+            <p>Jane Smith</p>
+
+            </div>
+            <div class="card-right">
+           <h1 class="main-heading">Registor now  </h1>
+           <p class="subheading">enter your Information to  register for the workshop </p>
+           <form autocomplete="off">
+            <div class="name">
+               <div>
+                <input type="text" id="name" placeholder="fristname"  oninput="userHandler(event)" >
+                <strong id="result1"></strong>
+               </div>
+
+               <div>
+                <input type="text" id="name" placeholder="fristname"  oninput="userHandler(event)" >
+               
+               </div>
+            </div>
+            <input type="text" id="email" placeholder="Email"  oninput="emailHandler(event)">
+            <strong id="result2"></strong>
+            <label for="day">Select Day</label>
+            <select id="day" class="">
+                <option value="/">option</option>
+                <option value="/">option</option>
+                <option value="/">option</option>
+                <option value="/">option</option>
+                <option value="/">option</option>
+                <option value="/">option</option>
+
+                
+                
+            </select>
+            <button type="submit">Registor</button>
+           
+           </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+          let user = document.getElementById('name');
+          let  result1 = document.getElementById('result1');
+          let  result2 = document.getElementById('result2');
+          let email = document.getElementById('email');
+          let day = document.getElementById('day');
+
+
+          function  userHandler(e){
+                    e.preventDefault();
+            if(user.value.length === 0){
+                result1.innerHTML = 'please enter user name'
+                user.style.border = 'red'
+                result1.style.color = 'red'
+            }
+            else{
+                if(user.value.length<=5){
+                result1.innerHTML = "please enter valid username"
+                user.style.border = "2px solid red"
+                result1.style.color = "red"
+            }
+            else{
+                result1.innerHTML = "valid username"
+                user.style.border = "2px solid green"
+                result1.style.color = "green" 
+            }
+           }
+        }  
+          
+        
+          
+  
+  
+          function emailHandler(e){
+              e.preventDefault();
+              let  regex1 = /^\S+\@\S+\.\S+$/;
+           
+              
+  
+  
+  
+              if(email.value.length === 0){
+                  result2.innerHTML = "please enter email field"
+                  email.style.border = "2px solid red ";
+                  result2.style.color = "red";
+              }
+              else{
+                  console.log(regex1.test(email.value));
+                  if(regex1.test (email.value) === false){
+                      result2.innerHTML = "please enter valid email"
+                      email.style.border = "2px solid red ";
+                      result2.style.color = "red";
+                  }
+                  else{
+                      result2.innerHTML = " valid email"
+                      email.style.border = "2px solid green ";
+                      result2.style.color = "green";
+                  }
+              }
+          }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+      *{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0;
+      }
+        
+       .container{
+        min-height: 100vh;
+        background-color: rgba(12, 10, 10, 0.632);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .card{
+        width: 80%;
+        height: 600px;
+        display: flex;
+        padding: 30px;
+       }
+       .card-left{
+        flex: 1;
+        background-color: rgba(0, 7, 86, 0.616);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        flex-direction: column;
+
+       }
+       .card-right{
+        flex: 1;
+        background-color: rgb(255, 255, 255);
+        padding: 10PX;
+        
+
+       }
+       .card-left h1{
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 600;
+
+       }
+       .card-left h3{
+        color: #ffffffbc;
+        font-size: 1.6rem;
+        
+        
+       }
+       .card-left h3 span{
+        margin-left: 30px;
+        line-height: 2;
+       }
+       .card-left h4{
+        color:#fffffff3;
+        font-size: 1.3rem;
+        
+       }
+       .card-left img{
+        border-radius:100%;
+        width: 100px;
+        height: 100px;
+       }
+       .card-left p{
+        font-size: 1.1rem;
+        color: #faf7f7e9;
+       }
+       .card-left h2{
+        font-size: 1.3rem;
+        color:#ffffffd8;
+       }
+       .card-right h1{
+          margin-top: 60px;
+          text-align: center;
+          font-size: 2.3rem;
+       }
+       .card-right h4{
+        text-align: center;
+        font-size: 1.2rem;
+        color: #3b3434d4;
+       }
+       #name{
+        padding: 10px;
+        width: 220px;
+        margin: 20px;
+        font-size: 1.1rem;
+        border: none;
+        outline: none;
+        border: 1px solid #a4a4a49b;
+        box-shadow: 0px 0px 10px #ccc;
+       }
+       #email{
+        width: 400px;
+        font-size: 1.1rem;
+        padding: 15px;
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        border: none;
+        outline: none;
+        border: 1px solid #a4a4a49b;
+        box-shadow: 0px 0px 10px #ccc;
+       }
+      .select{
+        margin-left: 20px;
+        line-height: 2;
+      }
+       label{
+          font-size: 1.3rem;
+          font-weight: 400;
+      }
+      .select input{
+        width: 400px;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        border: none;
+        outline: none;
+        border: 1px solid #a4a4a49b;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+      button{
+        width: 300px;
+        height: 50px;
+        color: #fff;
+        background-color: blue;
+        border-radius: 10px;
+        
+        margin-left: 150px;
+      }
+       
+       
+       
+      
+       
+       
+    </style>
+</head>
+<body>
+
+        <div class="container">
+            <div class="card">
+            <div class="card-left">
+                <h1>Analitics 101</h1>
+                 <h3>This free workshop shows you how to track <br><span>important metrics in your business</span></h3>
+
+                 <h4>Your host</h4>
+                 <img src="https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp" alt="">
+                 <p>CEO,Company</p>
+
+
+                 <h2>Jane Smith</h2>
+                 
+         </div>
+
+            <div class="card-right">
+              <h1>Registration now</h1>
+              <h4>Enter your information to register for the workshop.</h4>
+              <div class="name">
+                
+              <input type="text" name="" id="name" placeholder="Frist name">
+              <input type="text" name="" id="name" placeholder="Last name">
+            </div>
+              <input type="email" id="email" placeholder="Your email">
+
+              <div class="select">
+                
+              <label for="">Select Day : </label><br>
+              <input type="text" name="" id="Day" placeholder="Choose a day">
+              
+              
+        </div>
+              <button>register</button>
+            </div>
+            </div>
+        </div>
+            
+    
+            
+    
+    
+
+
+    <script>
+
+    </script>
+</body>
+</html>
